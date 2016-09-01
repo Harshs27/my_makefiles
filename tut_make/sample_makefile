@@ -1,0 +1,10 @@
+CC=gcc
+CFLAGS=-I.
+DEPS = hellomake1.h # dependencies
+OBJ = hellomake.o hellofunc.o
+
+%.o: %.c $(DEPS)
+		$(cc) -c -o $@ $< $(CFLAGS)
+
+output: $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS)
